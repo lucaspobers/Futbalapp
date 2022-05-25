@@ -1,0 +1,36 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href='{% static "css/style2.css" %}'>
+	<title>Futbol</title>
+</head>
+<body>
+	<div class="big-container">
+		<form class="inscripcion" method="POST">
+			<h2>The Ramos Mejia Times</h2>
+			<h3>AVISO CLASIFICADO</h3>
+			<p>Un equipo de las septima division esta buscando un entrenador para el resto de la temporada y opto por 'The Ramos Mejia Times' divulgar la noticia. Si estas interesado aplica aca abajo</p>
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="Continuar">
+		</form>
+	</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

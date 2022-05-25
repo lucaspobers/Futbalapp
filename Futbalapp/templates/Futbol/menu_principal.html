@@ -1,0 +1,74 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href='{% static "css/style3.css" %}'>
+	<title>Futbol</title>
+</head>
+<body>
+	<div class="big-container">
+		<div class="next-match">
+			<p>SIGUIENTE PARTIDO</p>
+			{% for k in equipo_propio %}
+				<p>{{k.nombre_equipo}}</p>
+			{% endfor %}
+			
+		</div>
+		<div class="game-data">
+			<p>INFORMACION SOBRE LA PARTIDA</p>
+		</div>
+		<div class="menu">
+			<ul>
+				<li>JUGAR PARTIDO</li>
+				<a href="equipo/"><li>EQUIPO</li></a>
+				<a href="competencias/"><li>COMPETENCIAS</li></a>
+				<a href="calendario/1/"><li>CALENDARIO</li></a>
+				<li>FICHAJES</li>
+				<li>GUARDAR</li>
+				<li>SALIR</li>
+			</ul>
+		</div>
+		<div class="formacion">
+			<p>Nombre</p>
+			<p>Apellido</p>
+			<p>Valoracion</p>
+			<p>Posicion</p>
+			<p>Pais</p>
+
+<!-- 			{% for j in formacion %}
+				<p>{{j.nombre}}</p>
+				<p>{{j.apellido}}</p>
+				<p>{{j.valoracion}}</p>
+				<p>{{j.posicion}}</p>
+				<p>{{j.pais}}</p>
+			{% endfor %} -->
+		</div>
+		<div class="posiciones-liga">
+				<p>Equipo</p>
+				<p>Puntos</p>
+				<p>GF</p>
+				<p>GC</p>
+			{% for h in posiciones %}
+				<p>{{h.nombre_equipo}}</p>
+				<p>{{h.puntos_equipo}}</p>
+				<p>{{h.goles_favor}}</p>
+				<p>-{{h.goles_contra}}</p>
+			{% endfor %}
+		</div>
+		<div class="goleadores">
+			<p>Nombre</p>
+			<p>Apellido</p>
+			<p>Goles</p>
+			{% for i in goleadores %}
+			<p>{{i.nombre}}</p>
+			<p>{{i.apellido}}</p>
+			<p>{{i.goles}}</p>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+*{
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+}
+
+.big-container{
+	padding: 5px;
+	margin: 5px;
+	border: 2px solid #777;
+}
+
+.big-container > h1{
+	text-align: center;
+}
+.posiciones-liga{
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	margin: 5px;
+	border: 2px solid #777;
+	justify-items: center;
+	align-items: center;
+}
+
+.posiciones-liga > p{
+	word-spacing: 0.05em;
+	justify-items: center;
+}

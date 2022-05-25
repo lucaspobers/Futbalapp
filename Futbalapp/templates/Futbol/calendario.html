@@ -1,0 +1,75 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href='{% static "css/style5.css" %}'>
+	<title>Calendario</title>
+</head>
+<body>
+
+	<div class="big-container">
+		<h1>CALENDARIO</h1>
+		<div class="calendario-titulo">	
+			<a href="#" id="restar"><img src="https://img.icons8.com/ios-glyphs/30/000000/left.png"></a>
+			<h2>Fecha</h2>
+			<a href="#" id="sumar"><img src="https://img.icons8.com/ios-glyphs/30/000000/right--v1.png"></a>
+
+		</div>	
+		<div class="calendario-liga">	
+		{% for a in fecha %}
+			<p>{{a.equipo_local}}</p>
+			<p>{{a.goles_local}}</p>
+			<p>{{a.goles_visitante}}</p>
+			<p>{{a.equipo_visitante}}</p>
+		{% endfor %}
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+
+	var contador = 1
+
+	function modificar_url(){
+		++contador;
+		var nueva_url = 'http://localhost:8000/futbol/menu/calendario/' + contador 
+		document.getElementById("sumar").href=nueva_url;
+		return contador
+	}
+
+
+    let botonSuma = document.getElementById("sumar")
+
+    botonSuma.addEventListener('click', modificar_url)
+
+    
+    // SOLO FUNCIONA UNA VEZ, no se si es por una cuesiton de seguridad
+
+
+</script>
+</html>
+
+<!-- 
+
+FUNCION PARA CAMBIAR EL NUMERO DE FECHA (SOLO VISUAL):
+function cambiarFecha(){
+	var element = document.getElementById('numero_fecha');
+	var value = element.innerHTML;
+
+	++value;
+	document.getElementById('numero_fecha').innerHTML = value
+}
+
+
+ORTRA MANERA DE QUE CAMBIE LA URL.
+
+document.getElementById("sumar").onclick = function() {	
+	++contador;
+	window.open('http://localhost:8000/futbol/menu/calendario/' + contador ,"_self")
+	return 
+ }
+
+-->

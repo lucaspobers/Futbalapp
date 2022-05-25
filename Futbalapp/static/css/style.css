@@ -1,0 +1,30 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.banner{
+	text-align: center;
+	font-size: 7em;
+
+}
+
+.main-container{
+	background: #61cf6c;
+	font-size: 3em;
+	text-align: center;
+	margin: 15px;
+	padding: 20px;
+}
+
+.main-container	> p{
+	border: 2px solid #fff;
+	border-radius: 15px;
+	margin-bottom: 10px;
+
+}
+
+.main-container	> p:hover{
+	background: #87d48f;
+}

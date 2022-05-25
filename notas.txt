@@ -1,0 +1,40 @@
+PROXIMAMENTE
+	-Definir bien las plantillas a usar y hacer todo el tema de la herencia
+	-Hacer que al confirmar mi equipo
+		-Se genere una lista de jugadores
+		-Se genere una lista de equipos
+
+
+Juego de futbol con STATS
+
+EQUIPO. Empezas agarrando un equipo muy humilde de una seleccion de paises
+	Elegimos el	
+		-nombre
+		-Abreviacion
+		-pais
+		-provincia/ciudad (determina el clasico del otro equipo, hacer que si o si se genere otro equipo de la 				   misma provincia/ciudad)
+		-colores (Si hago esto solo es bastante facil, sino despues le puedo meter camisetas y escudos)
+
+	Todos los equipos tienen un plantel con 24 Jugadores
+
+Jugadores tienen
+	-Velocidad
+	-Tiro
+	-Forma Fisica
+	-Regate
+	-Etc
+
+Todas estas habilidades se suman y forman un TOTAL JUGADOR
+
+Todos los totales de los jugadores componen el TOTAL EQUIPO
+
+Los dos TOTAL EQUIPO se enfrentan y dependiendo la cantidad que tengan cada uno se le asigna PROBABILIDAD DE GANAR. Despues la maquina asigna quien es el ganador
+
+PROABILIDAD DE GANAR. Puede estar compuesta por
+	-Si el equipo gano partidos hace poco
+	-Si perdio/gano el clasico
+	-Si se lesiona un JUGADOR FUNDAMENTAL
+
+JUGADOR FUNDAMENTAL. Alguien que haya hecho muchos goles/asistencias.
+
+MERCADO DE PASES. Al inicio de cada campaña vas a poder comprar y vender jugadores

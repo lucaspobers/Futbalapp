@@ -1,0 +1,36 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href='{% static "css/style4.css" %}'>
+	<title>Competencias</title>
+</head>
+<body>
+	<div class="big-container">	
+		<h1>TABLA DE POSICIONES</h1>
+		<div class="posiciones-liga">
+			<p>Equipo</p>
+			<p>Puntos</p>
+			<p>PJ</p>
+			<p>PG</p>
+			<p>PE</p>
+			<p>PP</p>
+			<p>GF</p>
+			<p>GC</p>
+		{% for a in liga_completa %}
+			<p>{{a.nombre_equipo}}</p>
+			<p>{{a.puntos_equipo}}</p>
+			<p>{{a.partidos_jugados}}</p>
+			<p>{{a.partidos_ganados}}</p>
+			<p>{{a.partidos_empatados}}</p>
+			<p>{{a.partidos_perdidos}}</p>
+			<p>{{a.goles_favor}}</p>
+			<p>-{{a.goles_contra}}</p>
+		{% endfor %}
+		</div>
+	</div>
+</body>
+</html>

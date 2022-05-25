@@ -1,0 +1,60 @@
+filter()
+exclude()
+order_by()
+
+values() - En lugar de devolver objetos, directamente devuelve un diccionario
+
+Blog.objects.filter(name__startswith='Beatles').values()
+<QuerySet [{'id': 1, 'name': 'Beatles Blog', 'tagline': 'All the latest Beatles news.'}]>
+
+Tambien se le pueden pasar como parametro los campos
+
+Blog.objects.values('id', 'name')
+<QuerySet [{'id': 1, 'name': 'Beatles Blog'}]>
+
+
+values_list() - Devuelve una TUPLA
+	flat - Dice que si seleccionas un solo campo y lo pones en true te devuelte todo como una lista
+
+Entry.objects.values_list('id', 'headline')
+<QuerySet [(1, 'First entry'), ...]>
+
+flat:	Entry.objects.values_list('id', flat=True).order_by('id')
+	<QuerySet [1, 2, 3, ...]>
+
+
+union() - Combina el resultado de dos o mas querySet. El operador union selecciona solo valores distintos, para habilitar los duplicados usamos como argumento 'all=True'
+qs1.union(qs2, qs3)
+
+intersection() - Devuelve unicamente los que son iguales
+difference() - Devuelve unicamente los diferentes
+
+
+Cuando queremos extraer solo un par de registros de la bbdd
+cursoListados = Curso.objects.all()[:5] - Me devuelve del 1 al 5
+
+Con esto + un filtro podemos hacer que se almacene en una variable 3 arqueros por ejemplo
+((el muchaho lo hace dentro de la funcion en la vista))
+
+
+--- No son de query pero pueden servir
+'import random'
+
+-choice() - Devuelve un item random de una lista, tupla o srt
+list1 = [1, 2, 3, 4, 5, 6]
+print(random.choice(list1))
+
+-randrange(beg, end, step) - Devuelve un numero random entre el rango que le damos
+print(random.randrange(20, 50, 3))
+
+-shuffle() - Cambia el orden de una lista
+random.shuffle(list_name)
+
+---
+
+AGGREGATION.
+(primero se importan) from django.db.models import Avg
+
+-Book.objects.all().aggregate(Avg('price')) - Devuelve el precio PROMEDIO de los libros
+-Book.objects.all().aggregate(Max('price')) - Devuelve el precio MAXIMO
+-Book.objects.aggregate(price_diff=Max('price', output_field=FloatField()) - Avg('price')) - Devuelve la DIFERENCIA entre el precio maximo y el promedio

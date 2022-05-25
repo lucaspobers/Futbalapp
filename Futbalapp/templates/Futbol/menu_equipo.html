@@ -1,0 +1,34 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href='{% static "css/style6.css" %}'>
+	<title>Equipo</title>
+</head>
+<body>
+	<p>Equipo</p>
+	<div class="big-container">
+		<div class="plantel">
+			<p>N°</p>
+			<p>Jugador</p>
+			<p>VE</p>
+			<p>RE</p>
+			<p>PA</p>
+			<p>TI</p>
+			<p>DE</p>
+			<p>FI</p>
+			<p>VA</p>
+			<p>POSICION</p>
+		{% for a in jugadores_equipo %}
+			{{a.nombre}}{{a.apellido}}
+		{% endfor %}
+		</div>
+		<div class="datos-extra">
+			<p>MEDIA EQUIPO</p>
+		</div>
+	</div>
+</body>
+</html>

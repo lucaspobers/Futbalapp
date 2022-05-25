@@ -1,0 +1,111 @@
+*{
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+
+.big-container{
+	padding: 5px;
+	margin: 5px;
+	border: 2px solid #777;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(100px, 2fr));
+	grid-template-rows: 200px, repeat(2, minmax(50px, 1fr));
+	min-height: 97vh;
+	max-height: 97vh;
+	overflow: hidden;
+}
+
+.next-match{
+	margin: 5px;
+	border: 2px solid #777;
+	min-height: 100px;
+}
+
+.game-data{
+	margin: 5px;
+	border: 2px solid #777;
+	grid-column: 2/4;
+}
+
+.menu{
+	margin: 5px;
+	border: 2px solid #777;
+	grid-row: 2/4;
+}
+
+.formacion{
+	margin: 5px;
+	border: 2px solid #777;
+	grid-column: 2/4;
+	grid-row: 2/3;
+	min-height: 15em;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(11, 1fr);
+	justify-items: center;
+}
+
+
+.formacion > p{
+	margin: 5px;
+}
+
+.posiciones-liga{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	grid-column: 2/3;
+	grid-row: 3/4;
+	margin: 5px;
+	border: 2px solid #777;
+	justify-items: center;
+	align-items: center;
+}
+
+.posiciones-liga > p{
+	word-spacing: 0.05em;
+	justify-items: center;
+}
+
+.goleadores{
+	margin: 5px;
+	border: 2px solid #777;
+	grid-column: 3/4;
+	grid-row: 3/4;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
+
+}
+
+/* Cuando esten todos los links eliminar */
+
+.menu > ul > li {
+	border: 2px solid #777;
+	list-style: none;
+	font-size: 3em;
+	margin: 5px;
+	text-align: center;
+}
+
+.menu > ul > li:hover{
+	background: #777;
+}
+
+/* - - - - - - - - - - - - - - - - - - - */
+
+.menu > ul > a > li {
+	border: 2px solid #777;
+	list-style: none;
+	font-size: 3em;
+	margin: 5px;
+	text-align: center;
+}
+
+.menu > ul > a > li:hover{
+	background: #777;
+}
+
+
+
